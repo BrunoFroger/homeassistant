@@ -4,7 +4,7 @@
 !*.sh
 !*.js*
 
-secrets.yaml
+secret.yaml
 
 .ssh
 .storage
