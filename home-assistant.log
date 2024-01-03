@@ -1,0 +1,66 @@
+2024-01-03 08:49:40.551 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2024-01-03 08:49:40.894 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=11 from 2024-01-02 15:19:47.674135)
+2024-01-03 08:50:28.784 ERROR (MainThread) [homeassistant.components.hassio.handler] /ingress/validate_session return code 401
+2024-01-03 08:50:28.785 ERROR (MainThread) [homeassistant.components.hassio] Failed to to call /ingress/validate_session - 
+2024-01-03 08:50:29.845 ERROR (MainThread) [homeassistant.components.sensor] Error adding entities for domain sensor with platform github
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 509, in async_add_entities
+    await asyncio.gather(*tasks)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 754, in _async_add_entity
+    await entity.add_to_platform_finish()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1025, in add_to_platform_finish
+    self.async_write_ha_state()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 745, in async_write_ha_state
+    self._async_write_ha_state()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 845, in _async_write_ha_state
+    state, attr = self._async_generate_attributes()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 786, in _async_generate_attributes
+    state = self._stringify_state(available)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 751, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 501, in state
+    value = self.native_value
+            ^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/github/sensor.py", line 214, in native_value
+    return self.entity_description.value_fn(self.coordinator.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/github/sensor.py", line 101, in <lambda>
+    value_fn=lambda data: data["default_branch_ref"]["commit"]["message"][:255],
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-01-03 08:50:29.897 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up github platform for sensor
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 369, in _async_setup_platform
+    await asyncio.gather(*pending)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 509, in async_add_entities
+    await asyncio.gather(*tasks)
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 754, in _async_add_entity
+    await entity.add_to_platform_finish()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 1025, in add_to_platform_finish
+    self.async_write_ha_state()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 745, in async_write_ha_state
+    self._async_write_ha_state()
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 845, in _async_write_ha_state
+    state, attr = self._async_generate_attributes()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 786, in _async_generate_attributes
+    state = self._stringify_state(available)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/helpers/entity.py", line 751, in _stringify_state
+    if (state := self.state) is None:
+                 ^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/sensor/__init__.py", line 501, in state
+    value = self.native_value
+            ^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/github/sensor.py", line 214, in native_value
+    return self.entity_description.value_fn(self.coordinator.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/src/homeassistant/homeassistant/components/github/sensor.py", line 101, in <lambda>
+    value_fn=lambda data: data["default_branch_ref"]["commit"]["message"][:255],
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2024-01-03 08:50:33.150 WARNING (MainThread) [aioesphomeapi.reconnect_logic] Can't connect to ESPHome API for temp-int @ 192.168.1.14: Error connecting to ('192.168.1.14', 6053): [Errno 113] Connect call failed ('192.168.1.14', 6053) (SocketAPIError)
+2024-01-03 08:50:33.153 WARNING (MainThread) [aioesphomeapi.reconnect_logic] Can't connect to ESPHome API for chaudiere @ 192.168.1.17: Error connecting to ('192.168.1.17', 6053): [Errno 113] Connect call failed ('192.168.1.17', 6053) (SocketAPIError)

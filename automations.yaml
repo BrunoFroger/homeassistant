@@ -1,0 +1,78 @@
+- id: '1703165912521'
+  alias: automatisation mode nuit
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.planification_mode_nuit
+    from: 'off'
+    to: 'on'
+    attribute: next_event
+  condition: []
+  action:
+  - service: climate.set_preset_mode
+    target:
+      entity_id: climate.regulateur
+    data:
+      preset_mode: nuit
+  mode: single
+- id: '1703169972006'
+  alias: automatisation mode jour
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - schedule.planification_mode_jour
+    attribute: next_event
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: confort
+    target:
+      entity_id: climate.regulateur
+  mode: single
+- id: '1703171364943'
+  alias: automatisation arret chaudiere
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /1
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: schedule.planification_mode_jour
+      state: 'off'
+    - condition: state
+      entity_id: schedule.planification_mode_nuit
+      state: 'off'
+  action:
+  - service: climate.turn_off
+    target:
+      entity_id: climate.regulateur
+    data: {}
+  mode: single
+- id: '1703237949610'
+  alias: automatisation demarrage chaudiere
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /1
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: automation.automatisation_mode_jour
+      state: 'on'
+    - condition: state
+      entity_id: schedule.planification_mode_nuit
+      state: 'on'
+  action:
+  - service: climate.turn_on
+    target:
+      entity_id: climate.regulateur
+    data: {}
+  mode: single

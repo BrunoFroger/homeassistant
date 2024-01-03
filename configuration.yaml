@@ -1,0 +1,32 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+climate:
+  - platform: generic_thermostat
+    unique_id: "chaudiere.regulateur"
+    name: regulateur
+    heater: switch.chaudiere_circulateur_onoff
+    target_sensor: sensor.temp_int_living_room_temperature
+    min_temp: 10
+    max_temp: 30
+    ac_mode: false
+    target_temp: 17
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 5
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 14
+    comfort_temp: 20
+    sleep_temp: 17
+    precision: 0.1

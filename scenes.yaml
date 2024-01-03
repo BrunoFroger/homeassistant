@@ -1,0 +1,85 @@
+- id: '1704206934308'
+  name: Nouvelle scène
+  entities:
+    sensor.brunofroger_homeassistant_demandes_d_extraction:
+      state_class: measurement
+      unit_of_measurement: Pull Requests
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Demandes d'extraction
+      attribution: Data provided by the GitHub API
+      state: '0'
+    sensor.brunofroger_homeassistant_dernier_probleme:
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Dernier problème
+      attribution: Data provided by the GitHub API
+      state: unavailable
+    sensor.brunofroger_homeassistant_derniere_balise:
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Dernière balise
+      attribution: Data provided by the GitHub API
+      state: unavailable
+    sensor.brunofroger_homeassistant_derniere_demande_d_extraction:
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Dernière demande d'extraction
+      attribution: Data provided by the GitHub API
+      state: unavailable
+    sensor.brunofroger_homeassistant_derniere_discussion:
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Dernière discussion
+      attribution: Data provided by the GitHub API
+      state: unavailable
+    sensor.brunofroger_homeassistant_derniere_version:
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Dernière version
+      attribution: Data provided by the GitHub API
+      state: unavailable
+    sensor.brunofroger_homeassistant_discussions:
+      state_class: measurement
+      unit_of_measurement: Discussions
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Discussions
+      attribution: Data provided by the GitHub API
+      state: '0'
+    sensor.brunofroger_homeassistant_etoiles:
+      state_class: measurement
+      unit_of_measurement: Stars
+      icon: mdi:star
+      friendly_name: BrunoFroger/homeassistant Étoiles
+      attribution: Data provided by the GitHub API
+      state: '0'
+    sensor.brunofroger_homeassistant_forks:
+      state_class: measurement
+      unit_of_measurement: Forks
+      icon: mdi:source-fork
+      friendly_name: BrunoFroger/homeassistant Forks
+      attribution: Data provided by the GitHub API
+      state: '0'
+    sensor.brunofroger_homeassistant_observateurs:
+      state_class: measurement
+      unit_of_measurement: Watchers
+      icon: mdi:glasses
+      friendly_name: BrunoFroger/homeassistant Observateurs
+      attribution: Data provided by the GitHub API
+      state: '1'
+    sensor.brunofroger_homeassistant_problemes:
+      state_class: measurement
+      unit_of_measurement: Issues
+      icon: mdi:github
+      friendly_name: BrunoFroger/homeassistant Problèmes
+      attribution: Data provided by the GitHub API
+      state: '0'
+    sensor.brunofroger_homeassistant_dernier_commit:
+      restored: true
+      icon: mdi:github
+      friendly_name: Dernier commit
+      supported_features: 0
+      state: unavailable
+    switch.chaudiere_circulateur_onoff:
+      restored: true
+      friendly_name: Circulateur ON/OFF
+      supported_features: 0
+      state: unavailable
+    switch.chaudiere_circulateur_on_off:
+      friendly_name: Chaudiere Circulateur ON/OFF
+      state: unavailable
+  metadata: {}

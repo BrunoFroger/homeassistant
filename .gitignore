@@ -1,0 +1,15 @@
+!*.yaml
+!.gitignore
+!*.md
+!*.sh
+!*.js*
+
+secret.yaml
+
+.ssh
+.storage
+.cloud
+.google.token
+homeassistant.log*
+id_rsa*
+
