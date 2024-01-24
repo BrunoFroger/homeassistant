@@ -11,12 +11,12 @@ scene: !include scenes.yaml
 
 alarm_control_panel:
   - platform: manual
-  
+
 climate:
   - platform: generic_thermostat
     unique_id: "chaudiere.regulateur"
     name: regulateur
-    heater: switch.chaudiere_circulateur_onoff
+    heater: switch.chaudiere_circulateur_on_off
     target_sensor: sensor.temp_int_living_room_temperature
     min_temp: 10
     max_temp: 30
@@ -35,5 +35,4 @@ climate:
     precision: 0.1
 
 shell_command:
-    pushupdates_to_github: /bin/bash pushupdate.sh
-
+  pushupdates_to_github: /bin/bash pushupdate.sh
