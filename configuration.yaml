@@ -9,6 +9,9 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+alarm_control_panel:
+  - platform: manual
+  
 climate:
   - platform: generic_thermostat
     unique_id: "chaudiere.regulateur"
@@ -30,3 +33,7 @@ climate:
     comfort_temp: 20
     sleep_temp: 17
     precision: 0.1
+
+shell_command:
+    pushupdates_to_github: /bin/bash pushupdate.sh
+
