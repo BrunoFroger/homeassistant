@@ -12,3 +12,5 @@ secrets.yaml
 .google.token
 id_rsa*
 *.log*
+*-shm
+*-wal
